@@ -30,7 +30,3 @@ Muitos dos conhecimentos e desafios enfrentados aqui serão aplicados no meu pro
 * **[Projeto Universe](https://github.com/Jaqueline-Gotardi/universe)**
 
 ---
-
-## 🤝 Conecte-se e Colabore
-Se você encontrar algum erro, tiver uma dica de melhoria ou quiser discutir um conceito de React:
-* **LinkedIn:** [https
