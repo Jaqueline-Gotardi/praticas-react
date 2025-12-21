@@ -1,11 +1,11 @@
-import NewTasks from "./NewTask"
+import NewTask from "./NewTask"
 
 const Tasks = () => {
     return (
         <div>
             <h2>Lista de tarefas</h2>
-            <NewTasks description="Estudar React no fim de semana"></NewTasks>  
-            <NewTasks description="Fazer bolo de chocolate"></NewTasks>          
+            <NewTask description="Estudar React no fim de semana"></NewTask>  
+            <NewTask description="Fazer bolo de chocolate"></NewTask>          
         </div>
     )
 }
