@@ -21,13 +21,13 @@ function App() {
 
   return (
     <>
-    {/* <p>Contador: {count}</p>
+    <p>Contador: {count}</p>
       <button onClick={increment}>
         Incrementar contador
       </button>
       <button onClick={decrement}>Decrementar contador</button>
-      <button onClick={resetCounter}>Resetar contador</button> */}
-      <MyInput></MyInput>
+      <button onClick={resetCounter}>Resetar contador</button>
+      {/* <MyInput></MyInput> */}
     </>
   )
 }
