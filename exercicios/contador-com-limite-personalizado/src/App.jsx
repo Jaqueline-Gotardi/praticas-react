@@ -2,37 +2,38 @@ import './App.css'
 import { useState } from 'react'
 
 function App() {
-  const [value, setValue] = useState(0);
-  const [max, setMax] = useState(10);
+  const [initialValue, setinitialValue] = useState(0);
+  const [valueMax, setvalueMax] = useState(10);
 
   const increment = () => {
-    setValue(prev => prev + 1);
-  }
-
+    if  (initialValue < valueMax) {
+      setinitialValue(prev => prev + 1); 
+      }  else {
+        alert("Valor máximo atingido!");
+      }
+    }
   const decrement = () => {
-    setValue(prev => prev - 1);
-  }
-  
+    if (initialValue > valueMax * -1) {
+    setinitialValue(prev => prev - 1);
+    } else {
+      alert("Valor mínimo atingido!")
+    }
+}
+
   return (
     <>
-    <p>Contador com limite máximo: {value}</p>
+    <h3>Contador com limite: {valueMax}</h3>
+    <p>Valor atual: {initialValue}</p>
     <button onClick={increment}>+</button>
     <button onClick={decrement}>-</button>
+    <br />
+    <input 
+    type="number"
+    value={initialValue} 
+    onChange={(e) => {setvalueMax(e.target.value)}}
+    
+     />
     </>
   )
 }
 export default App
-
-
-
-/* # Contador com Limite Personalizado
-
-O usuário pode
-
-- Definir um valor inicial via input
-- Definir um valor máximo via input
-- Aumentar/diminuir o valor com botões `-` e `+`
-- Exibir uma mensagem quando o valor máximo for atingido
-    - Conceitos aplicados
-        - `useState`
-        - Eventos (`onClick`, `onChange`)*/
