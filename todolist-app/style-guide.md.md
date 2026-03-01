@@ -13,18 +13,18 @@ The designs were created to the following widths:
 
 ### Primary
 
-- Blue 500: hsl(220, 98%, 61%)
+- Bright Blue: hsl(220, 98%, 61%)
 - Check Background: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%)
 
 ### Neutral
 
 ### Light Theme
 
-- Gray 50: hsl(0, 0%, 98%)
-- Purple 300: hsl(234, 39%, 85%)
-- Gray 300: hsl(233, 11%, 84%)
-- Gray 600: hsl(236, 9%, 61%)
-- Navy 850: hsl(235, 19%, 35%)
+- Very Light Gray: hsl(0, 0%, 98%)
+- Very Light Grayish Blue: hsl(234, 39%, 85%)
+- Light Grayish Blue: hsl(233, 11%, 84%)
+- Dark Grayish Blue: hsl(236, 9%, 61%)
+- Very Dark Grayish Blue: hsl(235, 19%, 35%)
 
 ### Dark Theme
 
