@@ -21,7 +21,7 @@ const TodoList = () => {
         }
       </ul>
 
-      <div className="flex justify-between p-4 text-neutral-very-linght-grayish-blue">
+      <div className="flex justify-between p-4 text-neutral-very-light-grayish-blue">
         <p>{todos.length} items total</p>
 
         <div className="flex gap-4">
