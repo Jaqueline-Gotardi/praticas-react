@@ -6,26 +6,26 @@ export const themeConfig = {
         name: "light",
         layout: {
             backgroundColor: "bg-neutral-very-light-grayish-blue",
-            textColor: "text-neutral-very-dark-grayish-blue",
+            textColor: "text-neutral-dark-grayish-blue",
         },
         todo: {
             backgroundColor: "bg-neutral-very-light-gray",
             borderColor: "border-neutral-very-light-grayish-blue",
             textColor: "text-neutral-very-dark-grayish-blue"
         },
-        icon: IconSun
+        icon: MoonIcon,
     },
     dark: {
         name: "dark",
         layout: {
             backgroundColor: "bg-neutral-very-dark-blue",
-            textColor: "text-neutral-light-grayish-blue-dark",
+            textColor: "text-neutral-very-dark-grayish-blue",
         },
         todo: {
             backgroundColor: "bg-neutral-very-dark-desaturated-blue",
-            borderColor: "border-neutral-very-dark-grayish-blue-dark",
-            textColor: "text-neutral-light-grayish-blue-dark",
+            borderColor: "border-neutral-very-dark-grayish-blue",
+            textColor: "text-neutral-light-grayish-blue",
         },
-        icon: MoonIcon
+        icon: IconSun,
     }
 }

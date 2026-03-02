@@ -1,4 +1,3 @@
-import IconSun from "/images/icon-sun.svg";
 import { themeConfig } from "../../contexts/theme";
 import { ThemeContext } from "../../contexts/ThemeContext";
 import { useContext } from "react";
