@@ -1,7 +1,7 @@
 import IconSun from '/images/icon-sun.svg';
 import MoonIcon from '/images/icon-moon.svg';
 
-export const theme = {
+export const themeConfig = {
     light: {
         name: "light",
         layout: {
