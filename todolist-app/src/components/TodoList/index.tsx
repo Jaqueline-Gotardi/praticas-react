@@ -12,6 +12,7 @@ const TodoList = () => {
   const { theme } = useContext(ThemeContext);
 
     return (
+      <>
         <div className={`${themeConfig[theme].todo.backgroundColor} rounded-md`}>
       <ul>
         {
@@ -31,16 +32,24 @@ const TodoList = () => {
       <div className={`text-sm flex justify-between p-4 ${themeConfig[theme].layout.textColor}`}>
         <p>{todos.length} items total</p>
 
-        <div className="flex gap-4">
-          <a className="text-bright-blue">All</a>
+        <div className="hidden sm:flex gap-4"> {/* esconder em telas menores */}
+          <button className="text-bright-blue">All</button>
           <button>Active</button>
           <button>Completed</button>
         </div>
 
-        <button>Clear Selected</button>
+        <button>Clear Completed</button>
       </div>
 
     </div>
+
+    <div className={`flex justify-center gap-5 py-4 rounded-md mt-4 {${themeConfig[theme].todo.backgroundColor} ${themeConfig[theme].layout.textColor} sm:hidden`}>
+        <button className="text-bright-blue">All</button>
+        <button>Active</button>
+        <button>Completed</button>
+      </div>
+
+      </>
     )
 }
 export default TodoList;
