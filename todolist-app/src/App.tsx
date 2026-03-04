@@ -2,6 +2,7 @@ import TodoHeader from "./components/TodoHeader"
 import TodoForm from "./components/TodoForm"
 import TodoList from "./components/TodoList"
 import { themeConfig } from "./contexts/theme"
+//import { ThemeContext } from "./contexts/ThemeProvider"
 import { ThemeContext } from "./contexts/ThemeContext"
 
 import { useContext } from "react"
