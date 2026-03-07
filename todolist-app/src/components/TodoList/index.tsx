@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { themeConfig } from "../../contexts/theme";
 //import { ThemeContext } from "../../contexts/ThemeProvider";
 import { ThemeContext } from "../../contexts/ThemeContext";
@@ -21,7 +21,7 @@ const TodoList = () => {
             <li className={`p-6 border-b ${themeConfig[theme].todo.borderColor}`} key={todo.id}>
 
               <div className="flex items-center gap-4">
-                <span className="w-6 h-6 rounded-full hover:bg-[linear-gradient(to_right,hsl(192,100%,67%),hsl(280,87%,65%))] hover:p-[1px]">
+                <span className="w-6 h-6 rounded-full hover:bg-[linear-gradient(to_right,hsl(192,100%,67%),hsl(280,87%,65%))] hover:p-px[1px]">
                 <button className={`w-full h-full border ${themeConfig[theme].todo.borderColor} rounded-full cursor-pointer ${themeConfig[theme].todo.backgroundColor}`}></button>
                 </span>
               <p className={`${themeConfig[theme].todo.textColor}`}>
@@ -53,7 +53,11 @@ const TodoList = () => {
         }`}>Completed</button>
         </div>
 
-        <button className="cursor-pointer">Clear Completed</button>
+        <button className={`cursor-pointer 
+        ${theme === "dark" 
+        ? "hover:text-neutral-light-grayish-blue-hover" 
+        : "hover:text-neutral-very-dark-grayish-blue" 
+        }`}>Clear Completed</button>
       </div>
 
     </div>
