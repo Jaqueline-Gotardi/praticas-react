@@ -2,22 +2,27 @@ import { useContext } from "react";
 import { themeConfig } from "../../contexts/theme";
 //import { ThemeContext } from "../../contexts/ThemeProvider";
 import { ThemeContext } from "../../contexts/ThemeContext";
+//import type { Todo } from "../../App";
 
-const todos = [
+/* const todos = [
   { id: 1, text: 'Todo 1' },
   { id: 2, text: 'Todo 2' },
   { id: 3, text: 'Todo 3' },
-]
+] */
 
-const TodoList = () => {
+ interface TodoListProps {
+    todoList: Todo[];
+  }
+
+const TodoList = ({todoList}: TodoListProps) => {
   const { theme } = useContext(ThemeContext);
 
     return (
       <>
         <div className={`${themeConfig[theme].todo.backgroundColor} rounded-md`}>
       <ul>
-        {
-          todos.map((todo) => (
+        { 
+        todoList.map((todo) => (
             <li className={`p-6 border-b ${themeConfig[theme].todo.borderColor}`} key={todo.id}>
 
               <div className="flex items-center gap-4">
@@ -33,8 +38,11 @@ const TodoList = () => {
         }
       </ul>
 
+
+      {/* renderiza o "rodapé" apenas de houver itens na lista */}
+      { todoList.length > 0 && (
       <div className={`text-sm flex justify-between p-4 ${themeConfig[theme].layout.textColor}`}>
-        <p>{todos.length} items total</p>
+        <p>{todoList.length} items total</p>
 
         <div className="hidden sm:flex gap-4"> {/* esconder em telas menores */}
           <button className={`text-bright-blue cursor-pointer ${theme === "dark" 
@@ -59,9 +67,11 @@ const TodoList = () => {
         : "hover:text-neutral-very-dark-grayish-blue" 
         }`}>Clear Completed</button>
       </div>
-
+      )}
     </div>
 
+    {/* renderização do "rodapé" para telas menores, apenas se houver itens na lista */}
+    { todoList.length > 0 && (
     <div className={`flex justify-center gap-5 py-4 rounded-md mt-4 {${themeConfig[theme].todo.backgroundColor} ${themeConfig[theme].layout.textColor} sm:hidden`}>
         <button className={`text-bright-blue cursor-pointer ${theme === "dark" 
         ? "hover:text-neutral-light-grayish-blue-hover" 
@@ -77,6 +87,7 @@ const TodoList = () => {
         : "hover:text-neutral-very-dark-grayish-blue" 
         }`}>Completed</button>
       </div>
+      )}
 
       </>
     )

@@ -19,7 +19,7 @@ function App() {
     const formData = new FormData(event.currentTarget);
     const todoItem = formData.get("todo") as string
 
-    console.log(todoItem)
+    //console.log(todoItem)
 
     if(!todoItem.trim()) return
 
@@ -28,6 +28,7 @@ function App() {
       text: todoItem,
       completed: false
     }])
+    event.currentTarget.reset();
   }
 
   return (
@@ -35,7 +36,7 @@ function App() {
 
     <TodoHeader></TodoHeader>
     <TodoForm addTodo={addTodo}></TodoForm>
-    <TodoList></TodoList>
+    <TodoList todoList={todoList}></TodoList>
 
     </TodoContainer>
   )
