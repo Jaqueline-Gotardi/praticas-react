@@ -3,6 +3,7 @@ import { themeConfig } from "../../contexts/theme";
 //import { ThemeContext } from "../../contexts/ThemeProvider";
 import { ThemeContext } from "../../contexts/ThemeContext";
 //import type { Todo } from "../../App";
+import IconCheck from "/images/icon-check.svg"
 
 
 /* const todos = [
@@ -29,7 +30,15 @@ const TodoList = ({todoList, toggleTodoCompleted}: TodoListProps) => {
 
               <div className="flex items-center gap-4">
                 <span className="w-6 h-6 rounded-full hover:bg-[linear-gradient(to_right,hsl(192,100%,67%),hsl(280,87%,65%))] hover:p-px[1px]">
-                <button onClick={() => toggleTodoCompleted(todo.id)}className={`w-full h-full border ${themeConfig[theme].todo.borderColor} rounded-full cursor-pointer ${themeConfig[theme].todo.backgroundColor}`}></button>
+
+                <button onClick={() => toggleTodoCompleted(todo.id)}className={`w-full h-full border ${themeConfig[theme].todo.borderColor} rounded-full cursor-pointer ${themeConfig[theme].todo.backgroundColor} ${todo.completed ? "bg-[linear-gradient(to_right,hsl(192,100%,67%),hsl(280,87%,65%))]" : ""}`}>
+
+                  {/* renderiza o ícone de check apenas se a tarefa estiver marcada como completa */}
+                  {todo.completed && (
+                    <img src={IconCheck} alt="ìcone de marcado" className="h-2 w-2 m-auto" />
+                  )}
+                </button>
+
                 </span>
               <p className={`${themeConfig[theme].todo.textColor} ${todo.completed ? "line-through opacity-50" : ""}`}>
                 {todo.text}
