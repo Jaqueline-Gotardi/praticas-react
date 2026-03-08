@@ -4,6 +4,7 @@ import { themeConfig } from "../../contexts/theme";
 import { ThemeContext } from "../../contexts/ThemeContext";
 //import type { Todo } from "../../App";
 
+
 /* const todos = [
   { id: 1, text: 'Todo 1' },
   { id: 2, text: 'Todo 2' },
@@ -12,9 +13,10 @@ import { ThemeContext } from "../../contexts/ThemeContext";
 
  interface TodoListProps {
     todoList: Todo[];
+    toggleTodoCompleted: (id: number) => void;
   }
 
-const TodoList = ({todoList}: TodoListProps) => {
+const TodoList = ({todoList, toggleTodoCompleted}: TodoListProps) => {
   const { theme } = useContext(ThemeContext);
 
     return (
@@ -27,9 +29,9 @@ const TodoList = ({todoList}: TodoListProps) => {
 
               <div className="flex items-center gap-4">
                 <span className="w-6 h-6 rounded-full hover:bg-[linear-gradient(to_right,hsl(192,100%,67%),hsl(280,87%,65%))] hover:p-px[1px]">
-                <button className={`w-full h-full border ${themeConfig[theme].todo.borderColor} rounded-full cursor-pointer ${themeConfig[theme].todo.backgroundColor}`}></button>
+                <button onClick={() => toggleTodoCompleted(todo.id)}className={`w-full h-full border ${themeConfig[theme].todo.borderColor} rounded-full cursor-pointer ${themeConfig[theme].todo.backgroundColor}`}></button>
                 </span>
-              <p className={`${themeConfig[theme].todo.textColor}`}>
+              <p className={`${themeConfig[theme].todo.textColor} ${todo.completed ? "line-through opacity-50" : ""}`}>
                 {todo.text}
                 </p>
               </div>
