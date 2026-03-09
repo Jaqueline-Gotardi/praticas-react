@@ -15,9 +15,12 @@ import IconCheck from "/images/icon-check.svg"
  interface TodoListProps {
     todoList: Todo[];
     toggleTodoCompleted: (id: number) => void;
+    setFilter: (filter: "all" | "active" | "completed" ) => void;
+    filter: "all" | "active" | "completed";
+    clearCompleted: () => void
   }
 
-const TodoList = ({todoList, toggleTodoCompleted}: TodoListProps) => {
+const TodoList = ({todoList, toggleTodoCompleted, setFilter, filter, clearCompleted}: TodoListProps) => {
   const { theme } = useContext(ThemeContext);
 
     return (
@@ -49,56 +52,50 @@ const TodoList = ({todoList, toggleTodoCompleted}: TodoListProps) => {
         }
       </ul>
 
-
-      {/* renderiza o "rodapé" apenas de houver itens na lista */}
-      { todoList.length > 0 && (
       <div className={`text-sm flex justify-between p-4 ${themeConfig[theme].layout.textColor}`}>
+
         <p>{todoList.length} items total</p>
 
         <div className="hidden sm:flex gap-4"> {/* esconder em telas menores */}
-          <button className={`text-bright-blue cursor-pointer ${theme === "dark" 
+          <button onClick={() => setFilter("all")} className={`${filter === "all" ? "text-bright-blue" : ""} cursor-pointer ${theme === "dark" 
         ? "hover:text-neutral-light-grayish-blue-hover" 
         : "hover:text-neutral-very-dark-grayish-blue" 
         }`}>All</button>
-          <button className={`cursor-pointer 
+          <button onClick={() => setFilter("active")} className={`${filter === "active" ? "text-bright-blue" : ""}cursor-pointer 
         ${theme === "dark" 
         ? "hover:text-neutral-light-grayish-blue-hover" 
         : "hover:text-neutral-very-dark-grayish-blue" 
         }`}>Active</button>
-          <button className={`cursor-pointer 
+          <button onClick={() => setFilter("completed")} className={`${filter === "completed" ? "text-bright-blue" : ""}cursor-pointer 
         ${theme === "dark" 
         ? "hover:text-neutral-light-grayish-blue-hover" 
         : "hover:text-neutral-very-dark-grayish-blue" 
         }`}>Completed</button>
         </div>
 
-        <button className={`cursor-pointer 
+        <button onClick={clearCompleted} className={`cursor-pointer 
         ${theme === "dark" 
         ? "hover:text-neutral-light-grayish-blue-hover" 
         : "hover:text-neutral-very-dark-grayish-blue" 
         }`}>Clear Completed</button>
       </div>
-      )}
     </div>
 
-    {/* renderização do "rodapé" para telas menores, apenas se houver itens na lista */}
-    { todoList.length > 0 && (
     <div className={`flex justify-center gap-5 py-4 rounded-md mt-4 {${themeConfig[theme].todo.backgroundColor} ${themeConfig[theme].layout.textColor} sm:hidden`}>
-        <button className={`text-bright-blue cursor-pointer ${theme === "dark" 
+        <button onClick={() => setFilter("all")} className={`${filter === "all" ? "text-bright-blue" : ""} cursor-pointer ${theme === "dark" 
         ? "hover:text-neutral-light-grayish-blue-hover" 
         : "hover:text-neutral-very-dark-grayish-blue" 
         }`}>All</button>
-        <button className={`cursor-pointer 
+        <button onClick={() => setFilter("active")} className={`${filter === "active" ? "text-bright-blue" : ""} cursor-pointer
         ${theme === "dark" 
         ? "hover:text-neutral-light-grayish-blue-hover" 
         : "hover:text-neutral-very-dark-grayish-blue" 
         }`}>Active</button>
-        <button className={`cursor-pointer ${theme === "dark" 
+        <button onClick={() => setFilter("completed")} className={`${filter === "completed" ? "text-bright-blue" : ""}cursor-pointer ${theme === "dark" 
         ? "hover:text-neutral-light-grayish-blue-hover" 
         : "hover:text-neutral-very-dark-grayish-blue" 
         }`}>Completed</button>
       </div>
-      )}
 
       </>
     )
