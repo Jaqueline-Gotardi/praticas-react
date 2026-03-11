@@ -3,6 +3,7 @@ import { themeConfig } from "../../contexts/theme";
 //import { ThemeContext } from "../../contexts/ThemeProvider";
 import { ThemeContext } from "../../contexts/ThemeContext";
 //import type { Todo } from "../../App";
+import { Todo } from "../../hooks/useTodo";
 import IconCheck from "/images/icon-check.svg"
 
 
