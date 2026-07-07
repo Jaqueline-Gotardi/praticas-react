@@ -19,6 +19,7 @@ async function getTodos(): Promise<Todo[]> {
 export const useTodo = () => {
   const [todoList, setTodoList] = useState<Todo[]>([]);
   const [filter, setFilter] = useState<"all" | "active" | "completed">("all");
+  const [refresh, setRefresh] = useState(false);
 
   useEffect(() => {
     const fetchTodos = async () => {    
@@ -29,7 +30,7 @@ export const useTodo = () => {
   };
 
   fetchTodos();
-}, []);
+}, [refresh, todoList]);
 
   // 1 - sem array de dependências
   //useEffect(() => {
@@ -102,5 +103,7 @@ export const useTodo = () => {
     clearCompleted,
     setFilter,
     filter,
+    refresh,
+    setRefresh
   };
 };
