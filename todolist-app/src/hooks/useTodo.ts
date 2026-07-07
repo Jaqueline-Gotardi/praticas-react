@@ -10,9 +10,9 @@ async function getTodos(): Promise<Todo[]> {
   await new Promise(resolve => setTimeout(resolve, 800))
 
   return [
-    {id: 1, text: "Aprender useEffect", completed: false},
-    {id: 1, text: "Aprender React", completed: false},
-    {id: 1, text: "Aprender JS", completed: true},
+    { id: 1, text: "Aprender useEffect", completed: false },
+    { id: 1, text: "Aprender React", completed: false },
+    { id: 1, text: "Aprender JS", completed: true },
   ]
 }
 
