@@ -10,6 +10,21 @@ export const useTodo = () => {
   const [todoList, setTodoList] = useState<Todo[]>([]);
   const [filter, setFilter] = useState<"all" | "active" | "completed">("all");
 
+  // 1 - sem array de dependências
+  //useEffect(() => {
+  //  console.log("Efeito executado")
+  //}); //sem dependências ele executa sempre que houver atualização
+
+  // 2 - array vazio
+  // useEffect(() => {
+  //   console.log("Efeito executado")
+  // }, []); //com dependência vazia ele executa apenas uma vez na montagem
+
+  // 3 - COM dependências
+  // useEffect(() => {
+  //    console.log("Efeito executado")
+  //  }, [contador]); //se as dependências mudarem ou o componente for montado pela primeira vez, executa o useEffect
+
   const addTodo = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
