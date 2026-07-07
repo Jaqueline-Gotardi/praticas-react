@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 
 export interface Todo {
   id: number;
@@ -6,9 +6,30 @@ export interface Todo {
   completed: boolean;
 }
 
+async function getTodos(): Promise<Todo[]> {
+  await new Promise(resolve => setTimeout(resolve, 800))
+
+  return [
+    {id: 1, text: "Aprender useEffect", completed: false},
+    {id: 1, text: "Aprender React", completed: false},
+    {id: 1, text: "Aprender JS", completed: true},
+  ]
+}
+
 export const useTodo = () => {
   const [todoList, setTodoList] = useState<Todo[]>([]);
   const [filter, setFilter] = useState<"all" | "active" | "completed">("all");
+
+  useEffect(() => {
+    const fetchTodos = async () => {    
+    const todos = await getTodos(); //simula a chamada pra api externa depois de 800ms retorna a lista de tarefas
+
+    console.log("Dados recebidos:", todos);
+    setTodoList(todos);
+  };
+
+  fetchTodos();
+}, []);
 
   // 1 - sem array de dependências
   //useEffect(() => {
@@ -30,8 +51,6 @@ export const useTodo = () => {
 
     const formData = new FormData(event.currentTarget);
     const todoItem = formData.get("todo") as string;
-
-    //console.log(todoItem)
 
     if (!todoItem.trim()) return;
 
