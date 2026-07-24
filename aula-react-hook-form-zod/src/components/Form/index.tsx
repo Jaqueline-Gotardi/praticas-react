@@ -2,7 +2,7 @@ import './Form.css'
 
 export const Form = () => {
     return (
-        <form>
+        <form className="container">
             <label htmlFor="email">E-mail</label>
             <input type="email" id="email" placeholder="Informe seu e-mail"/>
 
