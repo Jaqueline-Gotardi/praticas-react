@@ -1,11 +1,13 @@
 import './Form.css'
 import { z } from 'zod'
 
-const registerUserFormShema = z.object({
+const registerUserFormSchema = z.object({
     email: z.email('Preencha o e-mail corretamente!').min(1, 'Campo obrigatório!'),
-    password: z.string().min(6, 'A senha deve ter no mínimo 6 caracteres!')  
+    password: z.string().min(6, 'A senha deve ter no mínimo 6 caracteres!')  ,
+    confirmPassword: z.string().min(6, 'Verifique se o campo tem o mínimo de 6 caracteres!')
 })
 
+type registerUserFormData = z.infer<typeof registerUserFormSchema>
 
 export const Form = () => {
     return (
