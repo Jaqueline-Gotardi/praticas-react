@@ -1,5 +1,7 @@
 import './Form.css'
 import { z } from 'zod'
+import { useForm, type SubmitHandler } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
 
 const registerUserFormSchema = z.object({
     email: z.email('Preencha o e-mail corretamente!').min(1, 'Campo obrigatório!'),
@@ -10,16 +12,41 @@ const registerUserFormSchema = z.object({
 type registerUserFormData = z.infer<typeof registerUserFormSchema>
 
 export const Form = () => {
+
+    const { handleSubmit, register, formState: { errors, isSubmitting }, } 
+    = useForm<registerUserFormData>(
+        {
+            mode: 'onBlur',
+            criteriaMode: 'all',
+            resolver: zodResolver(registerUserFormSchema)
+        }
+    );
+
+    const onSubmit: SubmitHandler<registerUserFormData> = async (data: registerUserFormData) => {
+
+        console.log('enviando dados para API do usuário')
+
+        await fetch('https://localhost:3333/users', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
+        });
+    };
+
+    console.log(register("email"))
+
     return (
-        <form className="container">
+        <form className="container" onSubmit={handleSubmit(onSubmit)}>
             <label htmlFor="email">E-mail</label>
-            <input type="email" id="email" placeholder="Informe seu e-mail"/>
+            <input type="email" id="email" placeholder="Informe seu e-mail" {...register('email') }/>
 
             <label htmlFor="password">Senha</label>
             <input type="password" id="password" placeholder="Informe sua senha"/>
 
             <label htmlFor="confirmPassword">Confirmar Senha</label>
             <input type="password" id="confirmPassword" placeholder="Informe sua senha novamente"/>
+
+            <button type="submit" disabled={isSubmitting}>Cadastre-se</button>
         </form>
     )
 }
