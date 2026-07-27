@@ -1,4 +1,11 @@
 import './Form.css'
+import { z } from 'zod'
+
+const registerUserFormShema = z.object({
+    email: z.email('Preencha o e-mail corretamente!').min(1, 'Campo obrigatório!'),
+    password: z.string().min(6, 'A senha deve ter no mínimo 6 caracteres!')  
+})
+
 
 export const Form = () => {
     return (
