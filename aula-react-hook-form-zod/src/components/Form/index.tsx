@@ -24,8 +24,6 @@ export const Form = () => {
 
     const onSubmit: SubmitHandler<registerUserFormData> = async (data: registerUserFormData) => {
 
-        console.log('enviando dados para API do usuário')
-
         await fetch('https://localhost:3333/users', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -33,18 +31,34 @@ export const Form = () => {
         });
     };
 
-    console.log(register("email"))
-
     return (
         <form className="container" onSubmit={handleSubmit(onSubmit)}>
             <label htmlFor="email">E-mail</label>
-            <input type="email" id="email" placeholder="Informe seu e-mail" {...register('email') }/>
+            <input 
+            type="email" 
+            id="email" 
+            placeholder="Informe seu e-mail" 
+            {...register('email') }/>
+
+            {errors?.email && <p> {errors?.email?.message} </p>}
 
             <label htmlFor="password">Senha</label>
-            <input type="password" id="password" placeholder="Informe sua senha" {...register('password')}/>
+            <input 
+            type="password" 
+            id="password" 
+            placeholder="Informe sua senha" 
+            {...register('password')}/>
+
+            {errors?.password && <p> {errors?.password?.message} </p>}
 
             <label htmlFor="confirmPassword">Confirmar Senha</label>
-            <input type="password" id="confirmPassword" placeholder="Informe sua senha novamente" {...register('confirmPassword')}/>
+            <input 
+            type="password" 
+            id="confirmPassword" 
+            placeholder="Informe sua senha novamente" 
+            {...register('confirmPassword')}/>
+
+            {errors?.confirmPassword && <p> {errors?.confirmPassword?.message} </p>}
 
             <button type="submit" disabled={isSubmitting}>Cadastre-se</button>
         </form>
