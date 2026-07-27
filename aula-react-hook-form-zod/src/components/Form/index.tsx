@@ -41,10 +41,10 @@ export const Form = () => {
             <input type="email" id="email" placeholder="Informe seu e-mail" {...register('email') }/>
 
             <label htmlFor="password">Senha</label>
-            <input type="password" id="password" placeholder="Informe sua senha"/>
+            <input type="password" id="password" placeholder="Informe sua senha" {...register('password')}/>
 
             <label htmlFor="confirmPassword">Confirmar Senha</label>
-            <input type="password" id="confirmPassword" placeholder="Informe sua senha novamente"/>
+            <input type="password" id="confirmPassword" placeholder="Informe sua senha novamente" {...register('confirmPassword')}/>
 
             <button type="submit" disabled={isSubmitting}>Cadastre-se</button>
         </form>
