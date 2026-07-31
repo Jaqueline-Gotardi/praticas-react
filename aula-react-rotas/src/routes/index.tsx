@@ -8,6 +8,8 @@ export const Router = () => {
     return (
         <Routes>
             <Route path="/" element={<Layout />}>
+
+            {/* index indica que a rota padrão quando acessamos "/" na url */}
             <Route index element={<Home />} />
             <Route path="/about" element={<About />} />
             </Route>
