@@ -4,7 +4,7 @@ import { products } from "../../../mocks/products"
 export const ProductDetail = () => {
     const { id } = useParams()
 
-    const productDetail = products.find(product => product.id === Number(id))
+    const productDetail = products.find(product => product.id === Number(id));
 
     return (
         <>
@@ -17,5 +17,5 @@ export const ProductDetail = () => {
             <p>R${productDetail?.price},00</p>
         </div>
         </>
-    )
-}
+    );
+};
