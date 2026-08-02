@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 export const MostrarInicializacao = ({ mensagem } : {mensagem: string}) => {
     const [ estado, setEstado ] = useState("inicialização");
