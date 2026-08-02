@@ -1,13 +1,17 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
-import { MostrarInicializacao } from './components/MostrarInicializacao'
 
 function App() {
   const [count, setCount] = useState(0)
 
+  useEffect(() => {
+    console.log("executará o useEffect toda vez que o count mudar")
+  }, [count])
+
   return (
     <>
-    <MostrarInicializacao mensagem='olá mundo' />
+    <h1>Contador: {count}</h1>
+    <button onClick={() => setCount(prev => prev + 1)}>Incrementar</button>
     </>
   )
 }
