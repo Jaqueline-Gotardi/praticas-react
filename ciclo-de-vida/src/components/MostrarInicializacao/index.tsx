@@ -1,0 +1,18 @@
+import { useState } from "react"
+
+export const MostrarInicializacao = ({ mensagem } : {mensagem: string}) => {
+    const [ estado, setEstado ] = useState("inicialização");
+
+    console.log(estado);
+    console.log(mensagem);
+
+    return (
+        <div>
+            <h2>Estado interno</h2>
+            <p>{estado}</p>
+
+            <h2>Props recebidas</h2>
+            <pre>{JSON.stringify({mensagem}, null, 2)}</pre> 
+        </div>
+    )
+}
