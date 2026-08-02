@@ -7,6 +7,7 @@ interface ProductProps {
 }
 
 export const Products = ({ products }: ProductProps) => {
+    return (
     <section className='products-container'>
         <h2>Nossos Produtos</h2>
 
@@ -31,4 +32,5 @@ export const Products = ({ products }: ProductProps) => {
             ))}
         </div>
     </section>
+    )
 }

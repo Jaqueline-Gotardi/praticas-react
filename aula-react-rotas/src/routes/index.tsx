@@ -2,6 +2,8 @@ import { Routes, Route } from "react-router-dom";
 import { Layout } from "../components/Layout";
 import { Home } from "../components/pages/Home";
 import { About } from "../components/pages/About";
+import { Products } from "../components/pages/Products";
+import { products } from "../mocks/products"
 
 
 export const Router = () => {
@@ -12,6 +14,7 @@ export const Router = () => {
             {/* index indica que a rota padrão quando acessamos "/" na url */}
             <Route index element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="/products" element={<Products products={products} />} />
             </Route>
         </Routes>
     )
