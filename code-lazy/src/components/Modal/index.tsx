@@ -23,7 +23,7 @@ const modalStyles: React.CSSProperties = {
 };
 
 const contentStyles: React.CSSProperties = {
-   backgroundColor: 'white',
+   backgroundColor: 'violet',
    padding: '20px',
    borderRadius: '5px',
    maxWidth: '400px',
