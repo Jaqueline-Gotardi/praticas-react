@@ -18,7 +18,7 @@ function App() {
       <div>
         <h1>Exemplo de lazy loading com Modal</h1>
 
-        <button onClick={() => toggleModal}>Abrir modal</button>
+        <button onClick={toggleModal}>Abrir modal</button>
 
         <Suspense fallback={<p>Carregando modal...</p>}>
         {isModalOpen && <Modal />}
