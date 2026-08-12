@@ -2,7 +2,7 @@ import { usePosts } from "../../hooks/usePosts"
 
 export function Posts() {
 
-    const { data, isLoading, error } = usePosts();
+    const { data, isLoading, error } = usePosts(10);
 
     if(isLoading) {
         return <p>Carregando. . .</p>
