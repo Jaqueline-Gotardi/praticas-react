@@ -4,6 +4,14 @@ export function Posts() {
 
     const { data, isLoading, error } = usePosts();
 
+    if(isLoading) {
+        return <p>Carregando. . .</p>
+    }
+
+    if(error) {
+        <p>ocorreu um erro ao buscar os post: {error.message}</p>
+    }
+
     return (
         <ul>
             {data?.map((post) => (
