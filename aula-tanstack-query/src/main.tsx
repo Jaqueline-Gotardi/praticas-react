@@ -3,8 +3,15 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
 
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+
+// responsável por gerenciar todas as queries da aplicação
+const queryClient = new QueryClient();
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
+    <QueryClientProvider client={queryClient}>
     <App />
+    </QueryClientProvider>
   </StrictMode>,
-)
+);
