@@ -105,6 +105,7 @@ export const useTodo = () => {
     toggleTodoCompleted,
     filteredTodos,
     clearCompleted,
+    removeTodo,
     setFilter,
     filter,
     refresh,
