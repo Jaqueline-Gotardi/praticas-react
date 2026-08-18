@@ -1,6 +1,5 @@
 import { useContext, type FormEvent } from "react";
 import { themeConfig } from "../../contexts/theme";
-//import { ThemeContext } from "../../contexts/ThemeProvider";
 import { ThemeContext } from "../../contexts/ThemeContext";
 
 interface TodoInputProps {
