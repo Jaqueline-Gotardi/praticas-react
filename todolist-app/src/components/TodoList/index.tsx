@@ -34,7 +34,7 @@ const TodoList = ({todoList, toggleTodoCompleted, setFilter, filter, clearComple
             <li className={`p-6 border-b ${themeConfig[theme].todo.borderColor}`} key={todo.id}>
 
               <div className="flex items-center gap-4">
-                <span className="rounded-full flex cursor-pointer gap-2">
+                <span className="rounded-full flex gap-2">
 
                 <button onClick={() => toggleTodoCompleted(todo.id)}className={`w-6 h-6 border ${themeConfig[theme].todo.borderColor} rounded-full cursor-pointer ${themeConfig[theme].todo.backgroundColor} ${todo.completed ? "bg-[linear-gradient(to_right,hsl(192,100%,67%),hsl(280,87%,65%))]" : ""}`}>
 
