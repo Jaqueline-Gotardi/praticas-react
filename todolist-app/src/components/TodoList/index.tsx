@@ -18,10 +18,11 @@ import IconCheck from "/images/icon-check.svg"
     toggleTodoCompleted: (id: number) => void;
     setFilter: (filter: "all" | "active" | "completed" ) => void;
     filter: "all" | "active" | "completed";
-    clearCompleted: () => void
+    clearCompleted: () => void;
+    removeTodo: (id: number) => void;
   }
 
-const TodoList = ({todoList, toggleTodoCompleted, setFilter, filter, clearCompleted}: TodoListProps) => {
+const TodoList = ({todoList, toggleTodoCompleted, setFilter, filter, clearCompleted, removeTodo}: TodoListProps) => {
   const { theme } = useContext(ThemeContext);
 
     return (
