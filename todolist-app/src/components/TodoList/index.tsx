@@ -44,6 +44,10 @@ const TodoList = ({todoList, toggleTodoCompleted, setFilter, filter, clearComple
                   )}
                 </button>
 
+                <button onClick={() => removeTodo(todo.id)}className={`w-full h-full border ${themeConfig[theme].todo.borderColor} rounded-full cursor-pointer ${themeConfig[theme].todo.backgroundColor}`}>
+                 ❌
+                </button>
+
                 </span>
               <p className={`${themeConfig[theme].todo.textColor} ${todo.completed ? "line-through opacity-50" : ""}`}>
                 {todo.text}
