@@ -11,8 +11,8 @@ async function getTodos(): Promise<Todo[]> {
 
   return [
     { id: 1, text: "Aprender useEffect", completed: false },
-    { id: 1, text: "Aprender React", completed: false },
-    { id: 1, text: "Aprender JS", completed: true },
+    { id: 2, text: "Aprender React", completed: false },
+    { id: 3, text: "Aprender JS", completed: false },
   ]
 }
 
@@ -30,7 +30,7 @@ export const useTodo = () => {
   };
 
   fetchTodos();
-}, [refresh, todoList]);
+}, [setRefresh]); 
 
   // 1 - sem array de dependências
   //useEffect(() => {
