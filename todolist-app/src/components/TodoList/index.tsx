@@ -44,7 +44,7 @@ const TodoList = ({todoList, toggleTodoCompleted, setFilter, filter, clearComple
                   )}
                 </button>
 
-                <button onClick={() => removeTodo(todo.id)}className={`w-6 h-6 border ${themeConfig[theme].todo.borderColor} rounded-full cursor-pointer ${themeConfig[theme].todo.backgroundColor} size-6 flex`}>
+                <button onClick={() => removeTodo(todo.id)}className={`w-6 h-6 text-xs border ${themeConfig[theme].todo.borderColor} rounded-full cursor-pointer ${themeConfig[theme].todo.backgroundColor}`}>
                  ❌
                 </button>
 
