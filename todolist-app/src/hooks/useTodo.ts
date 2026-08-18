@@ -30,7 +30,7 @@ export const useTodo = () => {
   };
 
   fetchTodos();
-}, [setRefresh]); 
+}, [refresh]);  
 
   // 1 - sem array de dependências
   //useEffect(() => {
