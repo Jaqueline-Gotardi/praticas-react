@@ -11,8 +11,8 @@ async function getTodos(): Promise<Todo[]> {
 
   return [
     { id: 1, text: "Aprender useEffect", completed: false },
-    { id: 1, text: "Aprender React", completed: false },
-    { id: 1, text: "Aprender JS", completed: true },
+    { id: 2, text: "Aprender React", completed: false },
+    { id: 3, text: "Aprender JS", completed: false },
   ]
 }
 
@@ -30,7 +30,7 @@ export const useTodo = () => {
   };
 
   fetchTodos();
-}, [refresh, todoList]);
+}, [refresh]);  
 
   // 1 - sem array de dependências
   //useEffect(() => {
@@ -96,11 +96,16 @@ export const useTodo = () => {
     setTodoList((prev) => prev.filter((todo) => !todo.completed));
   };
 
+  const removeTodo = (id: number) => {
+    setTodoList((prev) => prev.filter((todo) => todo.id !== id));
+  }
+
   return {
     addTodo,
     toggleTodoCompleted,
     filteredTodos,
     clearCompleted,
+    removeTodo,
     setFilter,
     filter,
     refresh,

@@ -18,10 +18,11 @@ import IconCheck from "/images/icon-check.svg"
     toggleTodoCompleted: (id: number) => void;
     setFilter: (filter: "all" | "active" | "completed" ) => void;
     filter: "all" | "active" | "completed";
-    clearCompleted: () => void
+    clearCompleted: () => void;
+    removeTodo: (id: number) => void;
   }
 
-const TodoList = ({todoList, toggleTodoCompleted, setFilter, filter, clearCompleted}: TodoListProps) => {
+const TodoList = ({todoList, toggleTodoCompleted, setFilter, filter, clearCompleted, removeTodo}: TodoListProps) => {
   const { theme } = useContext(ThemeContext);
 
     return (
@@ -33,14 +34,18 @@ const TodoList = ({todoList, toggleTodoCompleted, setFilter, filter, clearComple
             <li className={`p-6 border-b ${themeConfig[theme].todo.borderColor}`} key={todo.id}>
 
               <div className="flex items-center gap-4">
-                <span className="w-6 h-6 rounded-full hover:bg-[linear-gradient(to_right,hsl(192,100%,67%),hsl(280,87%,65%))] hover:p-px[1px]">
+                <span className="rounded-full flex gap-2">
 
-                <button onClick={() => toggleTodoCompleted(todo.id)}className={`w-full h-full border ${themeConfig[theme].todo.borderColor} rounded-full cursor-pointer ${themeConfig[theme].todo.backgroundColor} ${todo.completed ? "bg-[linear-gradient(to_right,hsl(192,100%,67%),hsl(280,87%,65%))]" : ""}`}>
+                <button onClick={() => toggleTodoCompleted(todo.id)}className={`w-6 h-6 border ${themeConfig[theme].todo.borderColor} rounded-full cursor-pointer ${themeConfig[theme].todo.backgroundColor} ${todo.completed ? "bg-[linear-gradient(to_right,hsl(192,100%,67%),hsl(280,87%,65%))]" : ""}`}>
 
                   {/* renderiza o ícone de check apenas se a tarefa estiver marcada como completa */}
                   {todo.completed && (
                     <img src={IconCheck} alt="ìcone de marcado" className="h-2 w-2 m-auto" />
                   )}
+                </button>
+
+                <button onClick={() => removeTodo(todo.id)}className={`w-6 h-6 text-xs border ${themeConfig[theme].todo.borderColor} rounded-full cursor-pointer ${themeConfig[theme].todo.backgroundColor}`}>
+                 ❌
                 </button>
 
                 </span>
