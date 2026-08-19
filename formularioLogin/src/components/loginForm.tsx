@@ -1,20 +1,20 @@
 export function LoginForm() {
 
     return (
-        <form>
-            <h1>Entrar</h1>
+        <form className="flex justify-center items-center flex-col gap-4">
+            <h1 className="text-white">Entrar</h1>
 
-            <span>Nome de usuário ou e-mail</span>
-            <input placeholder="e-mail@email.com"></input>
+            <span className="text-white">Nome de usuário ou e-mail</span>
+            <input placeholder="e-mail@email.com" className="bg-[#130234] border-2 border-[#6528D3] rounded-md text-zinc-600" />
 
-            <span>Senha</span>
-            <input placeholder="******"></input>
+            <span className="text-white">Senha</span>
+            <input placeholder="******" className="bg-[#130234] border-2 border-[#6528D3] rounded-md" />
 
-            <input type="checkbox"></input>
+            <input type="checkbox" /> <span className="text-white">Manter conectado</span>
 
-            <link>Recupere sua senha</link>
+            <a>Recupere sua senha</a>
 
-            <button>Entrar</button>
+            <button className="text-white bg-[#6528D3]">Entrar</button>
 
         </form>
     )
