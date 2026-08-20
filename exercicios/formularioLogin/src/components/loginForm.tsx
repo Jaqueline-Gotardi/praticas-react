@@ -1,7 +1,7 @@
 export function LoginForm() {
 
     return (
-        <form className="max-w-xl flex flex-col gap-4 text-white bg-[#050404]">
+        <form className="max-w-xl flex flex-col gap-4 p-4 text-white bg-[#050404]">
             <h1>Entrar</h1>
 
             <label htmlFor="email">Nome de usuário ou e-mail</label>
@@ -10,11 +10,11 @@ export function LoginForm() {
             <label htmlFor="password">Senha</label>
             <input type="password" name="password" id="password" placeholder="******" className="bg-[#130234] border-2 border-[#6528D3] rounded-md text-[#d5d0e6] py-4 px-3 w-full text-xs" />
 
-            <div className="flex gap-2 items-center">
+            <label className="flex gap-2 items-center cursor-pointer">
             <input type="checkbox" className="hidden peer" />
-            <span className="w-4 h-4 border-2 border-[#6528D3] bg-black peer-checked:bg-[#6528D3] rounded-sm cursor-pointer"></span>
-             <span className="">Manter conectado</span>
-            </div>
+            <span className="w-4 h-4 border-2 border-[#6528D3] bg-black peer-checked:bg-[#6528D3] rounded-sm"></span>
+            Manter conectado
+            </label>
 
             <a className="text-[#6528D3] cursor-pointer">Recupere sua senha</a>
 
