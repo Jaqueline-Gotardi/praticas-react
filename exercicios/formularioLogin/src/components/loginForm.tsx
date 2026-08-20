@@ -5,10 +5,10 @@ export function LoginForm() {
             <h1>Entrar</h1>
 
             <span>Nome de usuário ou e-mail</span>
-            <input placeholder="e-mail@email.com" className="bg-[#130234] border-2 border-[#6528D3] rounded-md text-[#d5d0e6] py-4 px-3 w-full" />
+            <input placeholder="e-mail@email.com" className="bg-[#130234] border-2 border-[#6528D3] rounded-md text-[#d5d0e6] py-4 px-3 w-full text-xs" />
 
             <span>Senha</span>
-            <input placeholder="******" className="bg-[#130234] border-2 border-[#6528D3] rounded-md text-[#d5d0e6] py-4 px-3 w-full" />
+            <input placeholder="******" className="bg-[#130234] border-2 border-[#6528D3] rounded-md text-[#d5d0e6] py-4 px-3 w-full text-xs" />
 
             <input type="checkbox" /> <span>Manter conectado</span>
 
