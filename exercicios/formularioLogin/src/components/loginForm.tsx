@@ -10,11 +10,11 @@ export function LoginForm() {
             <span>Senha</span>
             <input placeholder="******" className="bg-[#130234] border-2 border-[#6528D3] rounded-md text-[#d5d0e6] py-4 px-3 w-full text-xs" />
 
-            <input type="checkbox" /> <span>Manter conectado</span>
+            <input type="checkbox" className="w-4 h-4 border-2 border-[#6528D3] rounded-sm cursor-pointer" /> <span>Manter conectado</span>
 
-            <a className="text-[#4c229e]">Recupere sua senha</a>
+            <a className="text-[#6528D3] cursor-pointer">Recupere sua senha</a>
 
-            <button className="bg-[#6528D3]">Entrar</button>
+            <button className="bg-[#6528D3] py-4 px-30 rounded-sm cursor-pointer">Entrar</button>
 
         </form>
     )
