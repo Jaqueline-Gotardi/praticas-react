@@ -2,6 +2,15 @@ import { useEffect, useState } from "react"
 
 function App() {
 
+  interface Produto {
+    id: number;
+    title: string;
+    price: number;
+    description: string;
+    category: string;
+    image: string;
+  }
+
   const [mostrarProduto, setMostrarProduto] = useState();
   
   useEffect(() => {
