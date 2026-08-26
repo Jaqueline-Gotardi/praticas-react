@@ -29,7 +29,7 @@ function App() {
   return (
     <div className="min-h-screen bg-[#8690a6] flex flex-col items-center justify-center">
       <h1 className="text-4xl font-bold text-[#20091b] mb-5">
-        Busque dados aleatórios!
+        Produtos da Fake Store:
       </h1>
 
       <div className="bg-[#888787] p-4 text-center ">
