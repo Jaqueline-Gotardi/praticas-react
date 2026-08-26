@@ -11,7 +11,7 @@ function App() {
     image: string;
   }
 
-  const [mostrarProduto, setMostrarProduto] = useState();
+  const [mostrarProduto, setMostrarProduto] = useState<Produto[]>([]);
   
   useEffect(() => {
     const produtos = async () => {
