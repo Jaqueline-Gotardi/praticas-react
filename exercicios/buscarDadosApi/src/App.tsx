@@ -27,19 +27,19 @@ function App() {
 }, [])
 
   return (
-    <div className="min-h-screen bg-[#8690a6] flex items-center justify-center">
-      <h1 className="text-4xl font-bold text-[#20091b]">
+    <div className="min-h-screen bg-[#8690a6] flex flex-col items-center justify-center">
+      <h1 className="text-4xl font-bold text-[#20091b] mb-5">
         Busque dados aleatórios!
       </h1>
 
-      <div>
+      <div className="bg-[#888787] p-4 text-center ">
         {mostrarProduto.map((produto) => (
           <div key={produto.id}>
-            <h2>{produto.title}</h2>
+            <h2 className="text-[#0f0e0e] text-2xl">{produto.title}</h2>
             <span>{produto.price}</span>
             <p>{produto.description}</p>
             <p>{produto.category}</p>
-            <img src={produto.image} alt="imagem"></img>
+            <img src={produto.image} alt={produto.title} />
           </div>
         ))}
         
