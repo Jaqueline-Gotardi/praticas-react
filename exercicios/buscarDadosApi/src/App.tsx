@@ -18,7 +18,7 @@ function App() {
     try {
       const response = await fetch("https://fakestoreapi.com/products");
       const data = await response.json();
-      setMostrarProduto(data);    
+      setMostrarProduto(data);   
     } catch (error) {
       console.error("Erro ao buscar os produtos:", error)
     }
