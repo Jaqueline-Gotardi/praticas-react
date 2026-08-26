@@ -33,6 +33,15 @@ function App() {
       </h1>
 
       <div>
+        {mostrarProduto.map((produto) => (
+          <div key={produto.id}>
+            <h2>{produto.title}</h2>
+            <span>{produto.price}</span>
+            <p>{produto.description}</p>
+            <p>{produto.category}</p>
+            <img src={produto.image} alt="imagem"></img>
+          </div>
+        ))}
         
       </div>
     </div>
