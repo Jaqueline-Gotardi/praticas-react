@@ -32,7 +32,7 @@ function App() {
         Produtos da Fake Store:
       </h1>
 
-      <div className="bg-[#888787] p-6 text-center grid grid-cols-2 justify-items-center gap-5">
+      <div className="bg-[#888787] p-6 text-center grid grid-cols-1 sm:grid-cols-2 justify-items-center gap-5">
         {mostrarProduto.map((produto) => (
           <div key={produto.id} className="bg-[#0002] p-3 w-sm rounded-2xl">
             <h2 className="text-[#0f0e0e] font-bold text-2xl mb-2">{produto.title}</h2>
