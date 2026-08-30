@@ -4,10 +4,10 @@ import { useForm, type SubmitHandler } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 
 const registerUserFormSchema = z.object({
-    email: z.email('Preencha o e-mail corretamente!').min(1, 'Campo obrigatório!'),
+    email: z.string().min(1, 'Campo obrigatório!').email('Preencha o e-mail corretamente!'),
     password: z.string().min(6, 'A senha deve ter no mínimo 6 caracteres!')  ,
     confirmPassword: z.string().min(6, 'Verifique se o campo tem no mínimo 6 caracteres!'),
-    telephone: z.string().min(10, 'O número deve ter no mínimo 10 caracteres!').max(11).regex(/^\d+$/),
+    telephone: z.string().min(10, 'O telefone deve ter pelo menos 10 dígitos.').max(11, 'O telefone deve ter no máximo 11 dígitos.').regex(/^\d+$/, 'O telefone deve conter apenas números.'),
 
 }).refine((data) => data.password === data.confirmPassword, {
     message: "As senhas não coincidem!",
