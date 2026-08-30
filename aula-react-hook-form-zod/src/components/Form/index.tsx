@@ -7,6 +7,8 @@ const registerUserFormSchema = z.object({
     email: z.email('Preencha o e-mail corretamente!').min(1, 'Campo obrigatório!'),
     password: z.string().min(6, 'A senha deve ter no mínimo 6 caracteres!')  ,
     confirmPassword: z.string().min(6, 'Verifique se o campo tem no mínimo 6 caracteres!'),
+    telephone: z.string().min(10, 'O número deve ter no mínimo 10 caracteres!').max(11).regex(/^\d+$/),
+
 }).refine((data) => data.password === data.confirmPassword, {
     message: "As senhas não coincidem!",
     path: ["confirmPassword"],
@@ -62,6 +64,15 @@ export const Form = () => {
             {...register('confirmPassword')}/>
 
             {errors?.confirmPassword && <p> {errors?.confirmPassword?.message} </p>}
+
+            <label htmlFor="telephone">Telefone</label>
+            <input
+            type="tel"
+            id="telephone"
+            placeholder="Informe seu telefone"
+            {...register('telephone')} />
+
+            {errors?.telephone && <p> {errors?.telephone.message} </p>}
 
             <button type="submit" disabled={isSubmitting}>Cadastre-se</button>
         </form>
