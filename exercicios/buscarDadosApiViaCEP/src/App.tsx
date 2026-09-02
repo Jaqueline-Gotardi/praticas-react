@@ -22,6 +22,7 @@ function App() {
       setCepData(null)
       return null
     } else {
+
       const data = await response.json()
 
       if (data.erro) {
@@ -37,6 +38,7 @@ function App() {
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
+    const cepInput = (event.currentTarget.elements.namedItem('cep' as HTMLInputElement)).value
   }
 
   return (
@@ -46,7 +48,7 @@ function App() {
       {erroCep && <p>{erroCep}</p>}
       <div className='input-container'>
         <label htmlFor='cep'>Informe seu CEP:</label>
-        <input id='cep' placeholder='digite seu CEP' />
+        <input name= 'cep' id='cep' placeholder='digite seu CEP' />
       </div>
 
       <button type='submit'>Acessar dados</button>
