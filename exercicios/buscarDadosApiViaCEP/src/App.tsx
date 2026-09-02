@@ -26,10 +26,11 @@ function App() {
       if (data.erro) {
         setErroCep('CEP não encontrado!')
         setCepData(null)
+        return null
       } else {
         setErroCep(null)
         return data as CepData
-      } 
+      }   
     } 
   } 
 
