@@ -14,8 +14,28 @@ function App() {
   const [cepData, setCepData] = useState<CepData | null>(null)
   const [erroCep, setErroCep] = useState<string | null>(null)
 
+  async function fetchCepData(cep: string): Promise<CepData | null> {
+    const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`)
+
+    if (!response.ok) {
+      setErroCep('Erro ao buscar dados do CEP')
+    } else {
+      const data = await response.json()
+
+      if (data.erro) {
+        setErroCep('CEP não encontrado!')
+      } else {
+        setErroCep(null)
+      } 
+    } 
+  } 
+
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+  }
+
   return (
-    <form className='form'>
+    <form className='form' onSubmit={handleSubmit}>
       <h1 className='title'>Sistema do Usuário</h1>
 
       {erroCep && <p>{erroCep}</p>}
