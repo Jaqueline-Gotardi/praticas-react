@@ -5,7 +5,7 @@
     justify-content: center;
     gap: 10px;
     min-height: 100vh;
-    background-color: #f5f5;
+    background-color: rgba(66, 51, 66, 0.333);
 }
 
 .title {

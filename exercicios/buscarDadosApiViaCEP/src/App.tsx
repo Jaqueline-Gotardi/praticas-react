@@ -26,13 +26,8 @@ function App() {
         setErroCep('CEP não encontrado!')
       } else {
         setErroCep(null)
-      } 
-
-      try {
         return data as CepData
-      } catch (error) {
-        setErroCep('Erro ao processar os dados do CEP')
-      }
+      } 
     } 
   } 
 
