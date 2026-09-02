@@ -40,11 +40,11 @@ function App() {
 
       {erroCep && <p>{erroCep}</p>}
       <div className='input-container'>
-        <label>Informe seu CEP:</label>
-        <input type='number' placeholder='digite seu CEP' />
+        <label htmlFor='cep'>Informe seu CEP:</label>
+        <input type='number' id='cep' placeholder='digite seu CEP' />
       </div>
 
-      <button>Acessar dados</button>
+      <button type='submit'>Acessar dados</button>
 
       {cepData && (
         <div className='cep-data'>
