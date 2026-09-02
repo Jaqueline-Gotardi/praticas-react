@@ -26,7 +26,7 @@ function App() {
 
       <button>Acessar dados</button>
 
-      {cepData && ({
+      {cepData && (
         <div>
         <p>CEP: {cepData.cep}</p>
         <p>Logradouro: {cepData.logradouro}</p>
@@ -35,7 +35,7 @@ function App() {
         <p>Estado: {cepData.estado}</p>
         <p>DDD: {cepData.ddd}</p>
       </div>
-      })}
+      )}
     </form>
   )
 }
