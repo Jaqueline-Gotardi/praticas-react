@@ -19,11 +19,13 @@ function App() {
 
     if (!response.ok) {
       setErroCep('Erro ao buscar dados do CEP')
+      setCepData(null)
     } else {
       const data = await response.json()
 
       if (data.erro) {
         setErroCep('CEP não encontrado!')
+        setCepData(null)
       } else {
         setErroCep(null)
         return data as CepData
