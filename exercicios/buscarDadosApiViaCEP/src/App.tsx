@@ -16,10 +16,10 @@ function App() {
 
   return (
     <form className='form'>
-      <h1>Sistema do Usuário</h1>
+      <h1 className='title'>Sistema do Usuário</h1>
 
       {erroCep && <p>{erroCep}</p>}
-      <div>
+      <div className='input-container'>
         <label>Informe seu CEP:</label>
         <input type='number' placeholder='digite seu CEP' />
       </div>
