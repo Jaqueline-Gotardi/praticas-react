@@ -6,8 +6,8 @@ function App() {
     cep: string
     logradouro: string
     bairro: string
-    cidade: string
-    estado: string
+    localidade: string
+    uf: string
     ddd: string
   }
 
@@ -41,7 +41,7 @@ function App() {
       {erroCep && <p>{erroCep}</p>}
       <div className='input-container'>
         <label htmlFor='cep'>Informe seu CEP:</label>
-        <input type='number' id='cep' placeholder='digite seu CEP' />
+        <input id='cep' placeholder='digite seu CEP' />
       </div>
 
       <button type='submit'>Acessar dados</button>
@@ -51,8 +51,8 @@ function App() {
         <p>CEP: {cepData.cep}</p>
         <p>Logradouro: {cepData.logradouro}</p>
         <p>Bairro: {cepData.bairro}</p>
-        <p>Cidade: {cepData.cidade}</p>
-        <p>Estado: {cepData.estado}</p>
+        <p>Cidade: {cepData.localidade}</p>
+        <p>Estado: {cepData.uf}</p>
         <p>DDD: {cepData.ddd}</p>
       </div>
       )}
