@@ -27,7 +27,7 @@ function App() {
       <button>Acessar dados</button>
 
       {cepData && (
-        <div>
+        <div className='cep-data'>
         <p>CEP: {cepData.cep}</p>
         <p>Logradouro: {cepData.logradouro}</p>
         <p>Bairro: {cepData.bairro}</p>

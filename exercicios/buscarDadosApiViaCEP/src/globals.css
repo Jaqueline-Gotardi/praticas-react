@@ -32,3 +32,22 @@
     transition: 0.3s ease;
     transform: scale(1.1);
 }
+
+.cep-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.cep-data p {
+    margin: 0;
+}
+
+.cep-data p:first-child {
+    font-weight: bold;
+}
+
+.cep-data p:nth-child(2) {
+    font-style: italic;
+}
