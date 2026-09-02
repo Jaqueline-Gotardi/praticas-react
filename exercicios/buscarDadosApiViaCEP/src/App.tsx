@@ -1,4 +1,5 @@
 import './globals.css'
+import { useState } from 'react'
 function App() {
 
   interface CepData {
@@ -10,10 +11,14 @@ function App() {
     ddd: string
   }
 
+  const [cepData, setCepData] = useState<CepData | null>(null)
+  const [erroCep, setErroCep] = useState<string | null>(null)
+
   return (
     <form>
       <h1>Sistema do Usuário</h1>
 
+      {erroCep && <p>{erroCep}</p>}
       <div>
         <label>Informe seu CEP:</label>
         <input type='number' placeholder='digite seu CEP' />
@@ -21,14 +26,16 @@ function App() {
 
       <button>Acessar dados</button>
 
-      <div>
-        <p>CEP:</p>
-        <p>Logradouro:</p>
-        <p>Bairro:</p>
-        <p>Cidade:</p>
-        <p>Estado:</p>
-        <p>DDD:</p>
+      {cepData && ({
+        <div>
+        <p>CEP: {cepData.cep}</p>
+        <p>Logradouro: {cepData.logradouro}</p>
+        <p>Bairro: {cepData.bairro}</p>
+        <p>Cidade: {cepData.cidade}</p>
+        <p>Estado: {cepData.estado}</p>
+        <p>DDD: {cepData.ddd}</p>
       </div>
+      })}
     </form>
   )
 }
