@@ -38,7 +38,15 @@ function App() {
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    const cepInput = (event.currentTarget.elements.namedItem('cep' as HTMLInputElement)).value
+    const cepInput = (event.currentTarget.elements.namedItem('cep') as HTMLInputElement).value
+
+    fetchCepData(cepInput).then((data) => {
+      if (data) {
+        setCepData(data)
+      } else {
+        setCepData(null)
+      }
+    })
   }
 
   return (
