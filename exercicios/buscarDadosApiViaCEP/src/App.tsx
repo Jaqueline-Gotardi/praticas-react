@@ -20,6 +20,7 @@ function App() {
     if (!response.ok) {
       setErroCep('Erro ao buscar dados do CEP')
       setCepData(null)
+      return null
     } else {
       const data = await response.json()
 
