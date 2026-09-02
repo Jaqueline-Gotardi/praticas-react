@@ -15,7 +15,7 @@ function App() {
   const [erroCep, setErroCep] = useState<string | null>(null)
 
   return (
-    <form>
+    <form className='form'>
       <h1>Sistema do Usuário</h1>
 
       {erroCep && <p>{erroCep}</p>}
