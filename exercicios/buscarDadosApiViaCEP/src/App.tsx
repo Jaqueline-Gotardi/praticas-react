@@ -36,18 +36,21 @@ function App() {
     } 
   } 
 
+  function validarCep(cepInput: string): boolean {
+
+    if (cepInput.length === 8 && /^[0-9]+$/.test(cepInput)) {
+      setErroCep(null)
+      return true
+  }
+  return false
+}
+
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
     const cepInput = (event.currentTarget.elements.namedItem('cep') as HTMLInputElement).value
 
-    if (cepInput.length !== 8) {
-      setErroCep('CEP inválido!')
-      return
-    } 
-
-    if (/^[0-9]+$/.test(cepInput) === false) {
-      setErroCep('CEP inválido! Precisa conter apenas números.')
-      return 
+    if (!validarCep(cepInput)) {
+      setErroCep('CEP inválido! Digite um CEP válido com 8 dígitos numéricos.')
     }
     
       fetchCepData(cepInput).then((data) => {
@@ -61,6 +64,8 @@ function App() {
 
   function handleBlur(event: React.FocusEvent<HTMLInputElement>) {
     const cepInput = event.currentTarget.value 
+
+    fetchCepData(cepInput)
   }
 
   return (
