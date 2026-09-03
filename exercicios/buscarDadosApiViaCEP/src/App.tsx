@@ -40,6 +40,12 @@ function App() {
     event.preventDefault()
     const cepInput = (event.currentTarget.elements.namedItem('cep') as HTMLInputElement).value
 
+    if (cepInput.length !== 8) {
+      setErroCep('CEP inválido!')
+    } else {
+      setErroCep(null)
+    }
+
     fetchCepData(cepInput).then((data) => {
       if (data) {
         setCepData(data)
