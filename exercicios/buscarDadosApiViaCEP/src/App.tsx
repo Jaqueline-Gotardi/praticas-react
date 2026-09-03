@@ -64,9 +64,12 @@ function App() {
   }
 
   function handleBlur(event: React.FocusEvent<HTMLInputElement>) {
-    const cepInput = event.currentTarget.value 
+    const cepInput = event.currentTarget.value;
 
-    fetchCepData(cepInput)
+    if (!validarCep(cepInput)) {
+      setErroCep('CEP inválido! Digite um CEP válido com 8 dígitos numéricos.')
+      return
+    } 
   }
 
   return (
