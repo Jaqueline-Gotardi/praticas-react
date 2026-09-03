@@ -24,7 +24,6 @@ function App() {
     } else {
 
       const data = await response.json()
-
       if (data.erro) {
         setErroCep('CEP não encontrado!')
         setCepData(null)
