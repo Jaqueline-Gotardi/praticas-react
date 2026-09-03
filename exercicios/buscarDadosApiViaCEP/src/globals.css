@@ -1,0 +1,53 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 100vh;
+    background-color: rgba(66, 51, 66, 0.333);
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.input-container {
+    gap: 5px;
+    display: flex;
+}
+
+.form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form button:hover {
+    background-color: #0056b3;
+    transition: 0.3s ease;
+    transform: scale(1.1);
+}
+
+.cep-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.cep-data p {
+    margin: 0;
+}
+
+.cep-data p:first-child {
+    font-weight: bold;
+}
+
+.cep-data p:nth-child(2) {
+    font-style: italic;
+}
