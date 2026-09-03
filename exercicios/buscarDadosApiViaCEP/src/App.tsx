@@ -59,6 +59,10 @@ function App() {
     }) 
   }
 
+  function handleBlur(event: React.FocusEvent<HTMLInputElement>) {
+    const cepInput = event.currentTarget.value 
+  }
+
   return (
     <form className='form' onSubmit={handleSubmit}>
       <h1 className='title'>Sistema do Usuário</h1>
@@ -66,7 +70,7 @@ function App() {
       {erroCep && <p>{erroCep}</p>}
       <div className='input-container'>
         <label htmlFor='cep'>Informe seu CEP:</label>
-        <input name= 'cep' id='cep' placeholder='digite seu CEP' />
+        <input name= 'cep' id='cep' placeholder='digite seu CEP' onBlur={handleBlur} />
       </div>
 
       <button type='submit'>Acessar dados</button>
