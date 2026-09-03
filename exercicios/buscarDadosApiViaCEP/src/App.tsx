@@ -47,6 +47,7 @@ function App() {
 
     if (/^[0-9]+$/.test(cepInput) === false) {
       setErroCep('CEP inválido! Precisa conter apenas números.')
+      return 
     }
     
       fetchCepData(cepInput).then((data) => {
