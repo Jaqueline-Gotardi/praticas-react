@@ -42,17 +42,16 @@ function App() {
 
     if (cepInput.length !== 8) {
       setErroCep('CEP inválido!')
-    } else {
-      setErroCep(null)
-    }
-
-    fetchCepData(cepInput).then((data) => {
-      if (data) {
+      return
+    } 
+    
+      fetchCepData(cepInput).then((data) => {
+        if (data) {
         setCepData(data)
       } else {
         setCepData(null)
       }
-    })
+      }) 
   }
 
   return (
