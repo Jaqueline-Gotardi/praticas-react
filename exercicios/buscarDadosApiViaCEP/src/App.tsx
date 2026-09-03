@@ -70,6 +70,11 @@ function App() {
       setErroCep('CEP inválido! Digite um CEP válido com 8 dígitos numéricos.')
       return
     } 
+    fetchCepData(cepInput).then((data) => {
+      if (data) {
+        setCepData(data)
+      }
+    })
   }
 
   return (
