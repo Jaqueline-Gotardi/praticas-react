@@ -16,6 +16,9 @@ function App() {
       <option value="eletronicos">Eletrônicos</option>
       <option value="roupas">Roupas</option>
       <option value="alimentos">Alimentos</option>
+      <option value="medicamentos">Medicamentos</option>
+      <option value="moveis">Móveis</option>
+      <option value="livros">Livros e Ebooks</option>
     </select>
 
     </form>
@@ -23,11 +26,3 @@ function App() {
 }
 
 export default App
-
-
-//### **Objetivos do exercício**
-
-//- Criar um formulário com campos básicos como:
-  //  - Nome do produto
-    //- Preço
-   // - Categoria (ex.: eletrônicos, roupas, alimentos, etc.)
