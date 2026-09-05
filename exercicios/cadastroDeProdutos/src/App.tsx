@@ -17,7 +17,9 @@ function App() {
     const categoria = formData.get('categoria')
 
     const novoProduto: Produto = {
-
+      produto: produto?.toString() || '',
+      preco: Number(preco) || 0,
+      categoria: categoria?.toString() || ''
     }
 
     if (produto) {
