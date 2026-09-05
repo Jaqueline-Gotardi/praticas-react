@@ -4,15 +4,15 @@ function App() {
     <main className="flex min-h-screen items-center justify-center">
       <form className="flex w-sm flex-col gap-0.5 bg-amber-50 p-5 shadow-md">
 
-        <label htmlFor="nome do produto">Nome do Produto:</label>
-        <input type="text" placeholder="Digite o nome do produto" className="border-gray-300 border-2 mb-2.5" />
+        <label htmlFor="produto">Nome do Produto:</label>
+        <input type="text" name="produto" placeholder="Digite o nome do produto" className="border-gray-300 border-2 mb-2.5" />
 
-        <label htmlFor="nome do produto">Preço:</label>
-        <input type="text" placeholder="Digite o valor" className="border-gray-300 border-2 mb-2.5" />
+        <label htmlFor="preco">Preço:</label>
+        <input type="text" name="preco" placeholder="Digite o valor" className="border-gray-300 border-2 mb-2.5" />
 
-        <label htmlFor="nome do produto">Categoria:</label>
+        <label htmlFor="categoria">Categoria:</label>
 
-        <select className="border-gray-300 border-2 mb-4">
+        <select name="categoria" className="border-gray-300 border-2 mb-4">
           <option value="">Selecione uma categoria</option>
           <option value="eletronicos">Eletrônicos</option>
           <option value="roupas">Roupas</option>
