@@ -1,5 +1,11 @@
 function App() {
 
+  interface Produto {
+    nome: string;
+    preco: number;
+    categoria: string;
+  }
+
   const [produto, setProduto] = useState<Produto[]>([]);
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
