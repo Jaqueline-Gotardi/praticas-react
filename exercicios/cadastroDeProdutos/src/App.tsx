@@ -7,10 +7,10 @@ function App() {
     <input type="text" placeholder="Digite o nome do produto" className="border-gray-300 border-2 mb-2.5" />
 
     <label htmlFor="nome do produto">Preço:</label>
-    <input type="text" placeholder="Digite o nome do produto" className="border-gray-300 border-2 mb-2.5" />
+    <input type="text" placeholder="Digite o valor" className="border-gray-300 border-2 mb-2.5" />
 
     <label htmlFor="nome do produto">Categoria:</label>
-    <input type="text" placeholder="Digite o nome do produto" className="border-gray-300 border-2" />
+    <input type="text" placeholder="Escolha a categoria" className="border-gray-300 border-2" />
 
     </form>
   )
