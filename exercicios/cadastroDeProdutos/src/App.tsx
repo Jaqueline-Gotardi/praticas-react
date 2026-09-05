@@ -22,13 +22,12 @@ function App() {
       categoria: categoria?.toString() || ''
     }
 
-    if (produto) {
-      setProduto(produto.toString());
+    if (produto && preco && categoria) {
+      setProduto(prevProdutos => [...prevProdutos, novoProduto]);
       return
     } else {
-      alert('Por favor, preencha o campo de produto.');
+      alert('Por favor, preencha todos os campos.')
     }
-  }
 
   return (
     <main className="flex min-h-screen items-center justify-center">
