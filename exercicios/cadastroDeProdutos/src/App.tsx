@@ -28,6 +28,7 @@ function App() {
     } else {
       alert('Por favor, preencha todos os campos.')
     }
+  }
 
   return (
     <main className="flex min-h-screen items-center justify-center">
