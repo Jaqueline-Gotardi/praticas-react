@@ -12,7 +12,7 @@ function App() {
 
         <label htmlFor="nome do produto">Categoria:</label>
 
-        <select className="border-gray-300 border-2">
+        <select className="border-gray-300 border-2 mb-4">
           <option value="">Selecione uma categoria</option>
           <option value="eletronicos">Eletrônicos</option>
           <option value="roupas">Roupas</option>
@@ -21,6 +21,8 @@ function App() {
           <option value="moveis">Móveis</option>
           <option value="livros">Livros e Ebooks</option>
         </select>
+
+        <button type="submit" className="bg-blue-400 text-center rounded-4xl cursor-pointer">Cadastrar</button>
 
       </form>
     </main>
