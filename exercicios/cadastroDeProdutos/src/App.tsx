@@ -1,5 +1,21 @@
 function App() {
 
+  const [produto, setProduto] = useState('');
+
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
+    const produto = formData.get('produto' as string);
+
+    if (produto) {
+      setProduto(produto.toString());
+      return
+    } else {
+      alert('Por favor, preencha o campo de produto.');
+    }
+  }
+
   return (
     <main className="flex min-h-screen items-center justify-center">
       <form className="flex w-sm flex-col gap-0.5 bg-amber-50 p-5 shadow-md">
@@ -22,7 +38,7 @@ function App() {
           <option value="livros">Livros e Ebooks</option>
         </select>
 
-        <button type="submit" className="bg-blue-400 text-center rounded-4xl cursor-pointer">Cadastrar</button>
+        <button type="submit" onSubmit={handleSubmit} className="bg-blue-400 text-center rounded-4xl cursor-pointer">Cadastrar</button>
 
       </form>
     </main>
