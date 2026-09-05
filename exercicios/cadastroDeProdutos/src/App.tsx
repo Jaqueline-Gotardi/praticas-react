@@ -10,7 +10,13 @@ function App() {
     <input type="text" placeholder="Digite o valor" className="border-gray-300 border-2 mb-2.5" />
 
     <label htmlFor="nome do produto">Categoria:</label>
-    <input type="text" placeholder="Escolha a categoria" className="border-gray-300 border-2" />
+
+    <select className="border-gray-300 border-2">
+      <option value="">Selecione uma categoria</option>
+      <option value="eletronicos">Eletrônicos</option>
+      <option value="roupas">Roupas</option>
+      <option value="alimentos">Alimentos</option>
+    </select>
 
     </form>
   )
