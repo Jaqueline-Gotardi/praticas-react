@@ -24,7 +24,7 @@ function App() {
         <input type="text" name="produto" id="produto" placeholder="Digite o nome do produto" className="border-gray-300 border-2 mb-2.5" />
 
         <label htmlFor="preco">Preço:</label>
-        <input type="text" name="preco" id="produto" placeholder="Digite o valor" className="border-gray-300 border-2 mb-2.5" />
+        <input type="text" name="preco" id="preco" placeholder="Digite o valor" className="border-gray-300 border-2 mb-2.5" />
 
         <label htmlFor="categoria">Categoria:</label>
 
