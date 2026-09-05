@@ -1,7 +1,7 @@
 function App() {
 
   interface Produto {
-    nome: string;
+    produto: string;
     preco: number;
     categoria: string;
   }
@@ -12,7 +12,13 @@ function App() {
     event.preventDefault();
 
     const formData = new FormData(event.currentTarget);
-    const produto = formData.get('produto' as string);
+    const produto = formData.get('produto')
+    const preco = formData.get('preco')
+    const categoria = formData.get('categoria')
+
+    const novoProduto: Produto = {
+
+    }
 
     if (produto) {
       setProduto(produto.toString());
