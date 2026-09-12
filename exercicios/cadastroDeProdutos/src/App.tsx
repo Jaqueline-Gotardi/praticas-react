@@ -61,11 +61,13 @@ function App() {
       </form>
 
       {produto.map((item) => (
-        <div key={item.id} className="flex flex-col gap-0.5 bg-amber-50 p-5 shadow-md mt-4">
-        <div>{item.produto}</div>
-        <div>{item.preco}</div>
-        <div>{item.categoria}</div>
-        </div>
+        <ul key={item.id} className="flex flex-col gap-0.5 bg-amber-50 p-5 shadow-md mt-4">
+          <li>
+            <p>{item.produto}</p>
+            <p>{item.preco}</p>
+            <p>{item.categoria}</p>
+            </li>
+          </ul>
       ))}
         
     </main>
