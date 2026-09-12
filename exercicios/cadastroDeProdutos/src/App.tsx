@@ -59,11 +59,11 @@ function App() {
       </form>
       {produto.map((item) => (
         <div>
-        <div key={item.produto}>{produto}</div>
-        <div key={item.preco}>{preco}</div>
-        <div key={item.categoria}>{categoria}</div>
+        <div key={item.produto}>{item.produto}</div>
+        <div key={item.preco}>{item.preco}</div>
+        <div key={item.categoria}>{item.categoria}</div>
         </div>
-))}
+      ))}
         
     </main>
   )
