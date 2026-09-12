@@ -3,6 +3,7 @@ import { useState } from "react";
 function App() {
 
   interface Produto {
+    id: number;
     produto: string;
     preco: number;
     categoria: string;
@@ -19,6 +20,7 @@ function App() {
     const categoria = formData.get('categoria')
 
     const novoProduto: Produto = {
+      id: Date.now(),
       produto: produto?.toString() || '',
       preco: Number(preco) || 0,
       categoria: categoria?.toString() || ''
@@ -57,11 +59,12 @@ function App() {
         <button type="submit" className="bg-blue-400 text-center rounded-4xl cursor-pointer">Cadastrar</button>
 
       </form>
+
       {produto.map((item) => (
-        <div>
-        <div key={item.produto}>{item.produto}</div>
-        <div key={item.preco}>{item.preco}</div>
-        <div key={item.categoria}>{item.categoria}</div>
+        <div key={item.id} className="flex flex-col gap-0.5 bg-amber-50 p-5 shadow-md mt-4">
+        <div>{item.produto}</div>
+        <div>{item.preco}</div>
+        <div>{item.categoria}</div>
         </div>
       ))}
         
