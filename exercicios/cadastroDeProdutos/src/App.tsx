@@ -57,6 +57,14 @@ function App() {
         <button type="submit" className="bg-blue-400 text-center rounded-4xl cursor-pointer">Cadastrar</button>
 
       </form>
+      {produto.map((item) => (
+        <div>
+        <div key={item.produto}>{produto}</div>
+        <div key={item.preco}>{preco}</div>
+        <div key={item.categoria}>{categoria}</div>
+        </div>
+))}
+        
     </main>
   )
 }
